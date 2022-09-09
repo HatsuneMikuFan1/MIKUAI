@@ -1,0 +1,6 @@
+int sides=5;
+polydata* poy=(polydata*)malloc(sizeof(struct polydata)+sides*sizeof(FCOORD)+sides*sizeof(COLORREF));
+    
+//Applied Pointer arithmetic
+    poy->points=(FCOORD *)(((char *)poy)+sizeof(polydata));
+    poy->color=(COLORREF *)(((char *)poy)+sizeof(polydata)+sides*sizeof(FCOORD));
